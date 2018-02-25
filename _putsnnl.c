@@ -4,10 +4,16 @@
  * _putsnnl - prints a string with nnl (no new line)
  * @str: string
  *
- * Return: void
+ * Return: number of chars printed
  */
-void _putsnnl(const char *str)
+int _putsnnl(const char *str)
 {
+	int chars_printed = 0;
+
 	while (*str)
+	{
 		_putchar(*str++);
+		chars_printed++;
+	}
+	return (chars_printed);
 }

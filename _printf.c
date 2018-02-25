@@ -3,7 +3,7 @@
 
 int _printf(const char *format, ...)
 {
-	/* int chars_printed = 0; */
+	int chars_printed = 0;
 	op_func f;
 	va_list valist;
 	char *op_str;
@@ -17,17 +17,17 @@ int _printf(const char *format, ...)
 			format++;
 			op_str = get_op_str(&format);
 			f = get_op_func(op_str);
-			f(valist);
+			chars_printed += f(valist);
 			free(op_str);
 		}
 		else
 		{
 			_putchar(*format++);
-			/* chars_printed++; */
+			chars_printed++;
 		}
 	}
 
 	va_end(valist);
 
-	return (0);
+	return (chars_printed);
 }
