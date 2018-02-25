@@ -12,10 +12,11 @@ int _printf(const char *format, ...)
 
 	while (format != NULL && *format)
 	{
-		if (*format == CONVERSION_SPECIFIER) /* hit '%' and inc +1 */
+		if (*format == CONVERSION_SPECIFIER) /* hit '%' */
 		{
 			format++;
-			op_str = get_op_str(&format);
+			op_str = get_op_str(format);
+			format++;
 			f = get_op_func(op_str);
 			chars_printed += f(valist);
 			free(op_str);

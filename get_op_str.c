@@ -25,23 +25,15 @@ int is_op_specifier(const char c)
  *
  * Return: a null terminated string with the proper op code in the string.
  */
-char *get_op_str(const char **s)
+char *get_op_str(const char *s)
 {
-	const char *original_string;
 	char *op_str;
-	unsigned int op_len = 0;
 
-	original_string = *s;
-
-	while (is_op_specifier(**s))
-	{
-		op_len++;
-		(*s)++;
-	}
-
-	op_str = malloc(op_len + 1);
-	op_str[op_len] = '\0';
-	_strncpy(op_str, original_string, op_len);
+	op_str = malloc(2);
+	if (op_str == NULL)
+		return (NULL);
+	op_str[1] = '\0';
+	_strncpy(op_str, s, 1);
 
 	return (op_str);
 
