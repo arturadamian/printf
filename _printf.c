@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 
 	va_start(valist, format);
 
-	while (*format)
+	while (format != NULL && *format)
 	{
 		if (*format == CONVERSION_SPECIFIER) /* hit '%' and inc +1 */
 		{

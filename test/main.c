@@ -9,13 +9,22 @@
  */
 int main(void)
 {
-	int len;
-	int len2;
-	/* unsigned int ui; */
-	/* void *addr; */
+	/* Testing some edge cases */
+	/* int len1, len2, len3, len4, len5, len6; */
+	/* /\* _printf(""); *\/ */
+	/* /\* _printf(NULL); *\/ */
+	/* len1 = _printf("Character:[%c]\n", NULL); */
+	/* len2 = printf("Character:[%c]\n", NULL); */
+	/* len3 = _printf("Character:[%c]\n", 'H', 'A'); */
+	/* len4 = printf("Character:[%c]\n", 'H', 'A'); */
+	/* len5 = _printf("Character:[%c%c%c%c]\n", 'H', 'A'); */
+	/* len6 = printf("Character:[%c%c%c%c]\n", 'H', 'A'); */
+	/* printf("%d == %d\n%d == %d\n%d == %d\n", len1, len2, len3, len4, len5, len6); */
 
-	len = _printf("Let's try to printf a simple sentence.\n");
-	len2 = printf("Let's try to printf a simple sentence.\n");
+
+
+	int len = _printf("Let's try to printf a simple sentence.\n");
+	int len2 = printf("Let's try to printf a simple sentence.\n");
 	_printf("Let's try to printf a simple sentence.\n");
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
@@ -25,6 +34,14 @@ int main(void)
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
+	_printf("hex, dec, oct:[%d, %d, %d]\n", 0xf, 15, 017);
+	_printf("hex, dec, oct:[%i, %i, %i]\n", 0xf, 15, 017);
+	printf("hex, dec, oct:[%d, %d, %d]\n", 0xf, 15, 017);
+	printf("hex, dec, oct:[%i, %i, %i]\n", 0xf, 15, 017);
+
+
+	/* unsigned int ui; */
+	/* void *addr; */
 	/* ui = (unsigned int)INT_MAX + 1024; */
 	/* addr = (void *)0x7ffe637541f0; */
 	/* _printf("Unsigned:[%u]\n", ui); */
