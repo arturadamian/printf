@@ -3,6 +3,7 @@
 
 int _printf(const char *format, ...)
 {
+	/* int chars_printed = 0; */
 	op_func f;
 	va_list valist;
 	char *op_str;
@@ -20,7 +21,10 @@ int _printf(const char *format, ...)
 			free(op_str);
 		}
 		else
+		{
 			_putchar(*format++);
+			/* chars_printed++; */
+		}
 	}
 
 	va_end(valist);

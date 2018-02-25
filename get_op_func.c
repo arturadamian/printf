@@ -12,6 +12,8 @@ op_func get_op_func(const char *s)
 	op_t ops[] = {
 		{"c", op_print_char},
 		{"s", op_print_string},
+		{"i", op_print_number},
+		{"d", op_print_number},
 		{NULL, NULL}
 	};
 
