@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			op_str = get_op_str(format);
+			if (op_str == NULL)
+				return (-1);
 			format++;
 			f = get_op_func(op_str);
 			chars_printed += f(valist);
