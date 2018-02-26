@@ -8,9 +8,12 @@ int _printf(const char *format, ...)
 	va_list valist;
 	char *op_str;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(valist, format);
 
-	while (format != NULL && *format)
+	while (*format)
 	{
 		if (*format == CONVERSION_SPECIFIER) /* hit '%' */
 		{
