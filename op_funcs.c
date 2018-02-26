@@ -122,7 +122,7 @@ int op_print_binary(va_list valist)
 	}
 	for (j = (i - 1); j >= 0; j--)
 	{
-		_putchar('0' + bNum[i]);
+		_putchar('0' + bNum[j]);
 		chars_printed++;
 	}
 	return (chars_printed++);
