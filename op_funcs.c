@@ -111,9 +111,9 @@ int op_print_number(va_list valist)
  */
 int op_print_binary(va_list valist)
 {
-	int bNum[1000];
+	unsigned int bNum[1000];
 	int j, i, chars_printed = 0;
-	int n;
+	unsigned int n;
 	n = va_arg(valist, int);
 
 	i = 0;
