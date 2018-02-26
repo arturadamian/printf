@@ -36,6 +36,7 @@ int op_print_number(va_list valist);
 int op_print_binary(va_list valist);
 int op_print_unsigned(va_list valist);
 int op_print_octal(va_list valist);
+int op_print_hex(va_list valist);
 op_func get_op_func(const char *s);
 char *get_op_str(const char *s);
 int is_err_os(char *os);
