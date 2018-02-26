@@ -114,7 +114,7 @@ int op_print_binary(va_list valist)
 	unsigned int bNum[1000];
 	int j, i, chars_printed = 0;
 	unsigned int n;
-	n = va_arg(valist, int);
+	n = va_arg(valist, unsigned int);
 
 	i = 0;
 	while (n > 0)
