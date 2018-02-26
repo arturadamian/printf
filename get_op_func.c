@@ -18,6 +18,9 @@ op_func get_op_func(const char *s)
 		{NULL, NULL}
 	};
 
+	while (*s == ' ')
+		s++;
+
 	i = 0;
 	while (ops[i].op && _strcmp(ops[i].op, s) != 0)
 		i++;
