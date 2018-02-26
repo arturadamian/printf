@@ -102,3 +102,29 @@ int op_print_number(va_list valist)
 	}
 	return (chars_printed);
 }
+
+/**
+ * dec_bin - function to convert decimal to a binary
+ * @format: argument
+ */
+int op_print_binary(va_list valist)
+{
+	int bNum[1000];
+	int j, i, chars_printed = 0;
+	int n;
+	n = va_arg(valist, int);
+
+	i = 0;
+	while (n > 0)
+	{
+		bNum[i] = n % 2;
+		n = n / 2;
+		i++;
+	}
+	for (j = (i - 1); j >= 0; j--)
+	{
+		_putchar('0' + bNum[j]);
+		chars_printed++;
+	}
+	return (chars_printed++);
+}
