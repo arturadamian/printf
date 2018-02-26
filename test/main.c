@@ -102,6 +102,10 @@ int main(void)
 	printf("%d\n", len);
 	len = _printf("abc%   T abc\n", 3);
 	printf("%d\n", len);
+	len = printf("abc%   s abc\n", "def");
+	printf("%d\n", len);
+	len = _printf("abc%   s abc\n", "def");
+	printf("%d\n", len);
 	len = printf("%", 3);
 	printf("%d\n", len);
 	len = _printf("%", 3);

@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	op_func f;
 	va_list valist;
 	char *op_str;
-	char *os_temp;
+	char *os_no_lead_sp;
 
 	if (format == NULL)
 		return (-1);
@@ -36,13 +36,13 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 
-			os_temp = skip_lead_sp(op_str);
+			os_no_lead_sp = skip_lead_sp(op_str);
 
-			if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0 && is_valid)
-			{
-				_putchar(' ');
-				chars_printed++;
-			}
+			/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0 && is_valid) */
+			/* { */
+			/* 	_putchar(' '); */
+			/* 	chars_printed++; */
+			/* } */
 
 			f = get_op_func(op_str);
 
@@ -50,18 +50,20 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				chars_printed++;
-				if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0)
-				{
-					_putchar(' ');
-					chars_printed++;
-				}
-				if (_strcmp(os_temp, "%") != 0)
-					chars_printed += _putsnnl(skip_lead_sp(op_str));
+				/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0) */
+				/* { */
+				/* 	_putchar(' '); */
+				/* 	chars_printed++; */
+				/* } */
+				if (_strcmp(os_no_lead_sp, "%") != 0)
+					chars_printed += _putsnnl(os_no_lead_sp);
 				free(op_str);
-				continue;
 			}
-			chars_printed += f(valist);
-			free(op_str);
+			else
+			{
+				chars_printed += f(valist);
+				free(op_str);
+			}
 		}
 		else
 		{
