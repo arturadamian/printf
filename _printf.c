@@ -40,8 +40,8 @@ int _printf(const char *format, ...)
 
 			/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0 && is_valid) */
 			/* { */
-			/* 	_putchar(' '); */
-			/* 	chars_printed++; */
+			/* _putchar(' '); */
+			/* chars_printed++; */
 			/* } */
 
 			f = get_op_func(op_str);
@@ -52,8 +52,8 @@ int _printf(const char *format, ...)
 				chars_printed++;
 				/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0) */
 				/* { */
-				/* 	_putchar(' '); */
-				/* 	chars_printed++; */
+				/* _putchar(' '); */
+				/* chars_printed++; */
 				/* } */
 				if (_strcmp(os_no_lead_sp, "%") != 0)
 					chars_printed += _putsnnl(os_no_lead_sp);
