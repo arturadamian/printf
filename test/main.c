@@ -29,20 +29,20 @@ int main(void)
 	len = _printf("%d\n", NULL);
 	printf("%d\n", len);
 
-	len = printf("%s\n", NULL);
-	printf("%d\n", len);
-	len = _printf("%s\n", NULL);
-	printf("%d\n", len);
+	/* len = printf("%s\n", NULL); */
+	/* printf("%d\n", len); */
+	/* len = _printf("%s\n", NULL); */
+	/* printf("%d\n", len); */
 
 
 	len = printf(NULL);
 	printf("%d\n", len);
 	len = _printf(NULL);
 	printf("%d\n", len);
-	len = printf("%%\n");
-	printf("%d\n", len);
-	len = _printf("%%\n");
-	printf("%d\n", len);
+	/* len = printf("%%\n"); */
+	/* printf("%d\n", len); */
+	/* len = _printf("%%\n"); */
+	/* printf("%d\n", len); */
 	len = printf("%%d\n", 5);
 	printf("%d\n", len);
 	len = _printf("%%d\n", 5);
@@ -52,30 +52,32 @@ int main(void)
 	len = _printf("%   %d\n", 5);
 	printf("%d\n", len);
 
-	len = _printf("Length:[%b, %b]\n", 76, 333);
-	printf("%d\n", len);
-	len = _printf("Let's try to printf a simple sentence.\n");
-	printf("%d\n", len);
-	len = printf("Let's try to printf a simple sentence.\n");
-	printf("%d\n", len);
-	len = _printf("Character:[%cs]\n", 'H');
-	printf("%d\n", len);
-	len = printf("Character:[%cs]\n", 'H');
-	printf("%d\n", len);
+	/* len = _printf("Length:[%b, %b]\n", 76, 333); */
+	/* printf("%d\n", len); */
+	/* len = _printf("Let's try to printf a simple sentence.\n"); */
+	/* printf("%d\n", len); */
+	/* len = printf("Let's try to printf a simple sentence.\n"); */
+	/* printf("%d\n", len); */
+	/* len = _printf("Character:[%cs]\n", 'H'); */
+	/* printf("%d\n", len); */
+	/* len = printf("Character:[%cs]\n", 'H'); */
+	/* printf("%d\n", len); */
 	len = _printf("Temperature is %dc\n", 4);
 	printf("%d\n", len);
 	len = printf("Temperature is %dc\n", 4);
 	printf("%d\n", len);
-	len = _printf("Character:[%c]\n", 'H');
-	printf("%d\n", len);
-	len = printf("Character:[%c]\n", 'H');
-	printf("%d\n", len);
-	len = _printf("String:[%s]\n", "I am a string !");
-	printf("%d\n", len);
-	len = printf("String:[%s]\n", "I am a string !");
-	printf("%d\n", len);
+	/* len = _printf("Character:[%c]\n", 'H'); */
+	/* printf("%d\n", len); */
+	/* len = printf("Character:[%c]\n", 'H'); */
+	/* printf("%d\n", len); */
+	/* len = _printf("String:[%s]\n", "I am a string !"); */
+	/* printf("%d\n", len); */
+	/* len = printf("String:[%s]\n", "I am a string !"); */
+	/* printf("%d\n", len); */
+	len = 2;
 	len = _printf("Length:[%d, %i]\n", len, len);
 	printf("%d\n", len);
+	len = 2;
 	len = printf("Length:[%d, %i]\n", len, len);
 	printf("%d\n", len);
 	len = _printf("Negative:[%d]\n", -762534);
@@ -90,30 +92,30 @@ int main(void)
 	printf("%d\n", len);
 	len = _printf("%       d\n", 3);
 	printf("%d\n", len);
-	len = printf("%   ", 3);
-	printf("%d\n", len);
-	len = _printf("%   ", 3);
-	printf("%d\n", len);
-	len = printf("abc%T abc\n", 3);
-	printf("%d\n", len);
-	len = _printf("abc%T abc\n", 3);
-	printf("%d\n", len);
-	len = printf("abc%   T abc\n", 3);
-	printf("%d\n", len);
-	len = _printf("abc%   T abc\n", 3);
-	printf("%d\n", len);
-	len = printf("abc%   s abc\n", "def");
-	printf("%d\n", len);
-	len = _printf("abc%   s abc\n", "def");
-	printf("%d\n", len);
-	len = printf("%", 3);
-	printf("%d\n", len);
-	len = _printf("%", 3);
-	printf("%d\n", len);
-	len = printf("abc%", 3);
-	printf("%d\n", len);
-	len = _printf("abc%", 3);
-	printf("%d\n", len);
+	/* len = printf("%   ", 3); */
+	/* printf("%d\n", len); */
+	/* len = _printf("%   ", 3); */
+	/* printf("%d\n", len); */
+	/* len = printf("abc%T abc\n", 3); */
+	/* printf("%d\n", len); */
+	/* len = _printf("abc%T abc\n", 3); */
+	/* printf("%d\n", len); */
+	/* len = printf("abc%   T abc\n", 3); */
+	/* printf("%d\n", len); */
+	/* len = _printf("abc%   T abc\n", 3); */
+	/* printf("%d\n", len); */
+	/* len = printf("abc%   s abc\n", "def"); */
+	/* printf("%d\n", len); */
+	/* len = _printf("abc%   s abc\n", "def"); */
+	/* printf("%d\n", len); */
+	/* len = printf("%", 3); */
+	/* printf("%d\n", len); */
+	/* len = _printf("%", 3); */
+	/* printf("%d\n", len); */
+	/* len = printf("abc%", 3); */
+	/* printf("%d\n", len); */
+	/* len = _printf("abc%", 3); */
+	/* printf("%d\n", len); */
 
 
 	/* unsigned int ui; */
