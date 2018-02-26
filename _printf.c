@@ -15,12 +15,12 @@ int _printf(const char *format, ...)
 	char *op_str;
 	char *os_no_lead_sp;
 
-	if (format == NULL) 	/* error */
+	if (format == NULL)	/* error */
 		return (-1);
 
 	va_start(valist, format); /* initialize variable sized arg list */
 
-	while (*format)		/* step through format string */
+	while (*format)	/* step through format string */
 	{
 		if (*format == CONVERSION_SPECIFIER) /* hit '%' */
 		{
@@ -51,14 +51,14 @@ int _printf(const char *format, ...)
 				free(op_str);
 			}
 		}
-		else		/* print the character */
+		else /* print the character */
 		{
 			_putchar(*format++);
 			chars_printed++;
 		}
 	}
 
-	va_end(valist); 	/* cleanup valist */
+	va_end(valist);	/* cleanup valist */
 
 	return (chars_printed);
 }
