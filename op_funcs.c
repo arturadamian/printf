@@ -104,8 +104,10 @@ int op_print_number(va_list valist)
 }
 
 /**
- * dec_bin - function to convert decimal to a binary
- * @format: argument
+ * op_print_binary - function to convert decimal to a binary
+ * @valist: a valist
+ *
+ * Return: number of characters printed
  */
 int op_print_binary(va_list valist)
 {

@@ -32,6 +32,7 @@ typedef struct op
 int op_print_char(va_list valist);
 int op_print_string(va_list valist);
 int op_print_number(va_list valist);
+int op_print_binary(va_list valist);
 op_func get_op_func(const char *s);
 char *get_op_str(const char *s);
 #endif

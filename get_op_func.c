@@ -14,6 +14,7 @@ op_func get_op_func(const char *s)
 		{"s", op_print_string},
 		{"i", op_print_number},
 		{"d", op_print_number},
+		{"b", op_print_binary},
 		{NULL, NULL}
 	};
 

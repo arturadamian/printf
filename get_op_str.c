@@ -1,21 +1,4 @@
 #include "holberton.h"
-
-int is_op_specifier(const char c)
-{
-	switch (c)
-	{
-	case 'c':
-	case 's':
-	case 'i':
-	case 'd':
-		return (1);
-	default:
-		return (0);
-	}
-
-	return (0);
-}
-
 /**
  * get_op_str - extracts the string representing the format
  * @s a pointer to the format

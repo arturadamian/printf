@@ -39,6 +39,7 @@ int main(void)
 	_printf("hex, dec, oct:[%i, %i, %i]\n", 0xf, 15, 017);
 	printf("hex, dec, oct:[%d, %d, %d]\n", 0xf, 15, 017);
 	printf("hex, dec, oct:[%i, %i, %i]\n", 0xf, 15, 017);
+	_printf("Length:[%b, %b]\n", len, len);
 
 
 	/* unsigned int ui; */
