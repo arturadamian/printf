@@ -9,6 +9,7 @@ int _printf(const char *format, ...);
 int _putsnnl(const char *str);
 int _strcmp(const char *s1, const char *s2);
 char *_strncpy(char *dest, const char *src, int n);
+char *skip_lead_sp(char *s);
 
 /**
  * op_func - Typedef for operator function
@@ -33,6 +34,8 @@ int op_print_char(va_list valist);
 int op_print_string(va_list valist);
 int op_print_number(va_list valist);
 int op_print_binary(va_list valist);
+int op_print_percentage(va_list valist);
 op_func get_op_func(const char *s);
 char *get_op_str(const char *s);
+int is_valid_os(char *os);
 #endif

@@ -9,17 +9,29 @@
  */
 int main(void)
 {
-	/* int len = _printf("Let's try to printf a simple sentence.\n"); */
-	/* int len2 = printf("Let's try to printf a simple sentence.\n"); */
-	/* int len3 = _printf("%c", '\n'); */
-	/* int len4 = printf("%c", '\n'); */
-	/* _printf("Length:[%d, %d, %d, %d]\n", len, len2, len3, len4); */
+	int len;
+	/* len = _printf("%"); */
+	/* printf("\n%d\n", len); */
+	/* len = printf("%"); */
+	/* printf("\n%d\n", len); */
+	/* len = _printf(" %"); */
+	/* printf("\n%d\n", len); */
+	/* len = printf(" %"); */
+	/* printf("\n%d\n", len); */
+	/* len = _printf("% "); */
+	/* printf("\n%d\n", len); */
+	/* len = printf("% "); */
+	/* printf("\n%d\n", len); */
 
-	int len = _printf("%");
-	int len2 = printf("%");
-	int len3 = _printf("%%");
-	int len4 = printf("%%");
-	_printf("Length:[%d, %d, %d, %d]\n", len, len2, len3, len4);
+	len = _printf("%%");
+	printf("\n%d\n", len);
+	len = printf("%%");
+	printf("\n%d\n", len);
+	len = _printf("%%, %d\n", 6, 10);
+	printf("\n%d\n", len);
+	len = printf("%%, %d\n", 6, 10);
+	printf("\n%d\n", len);
+
 
 	return (0);
 }
