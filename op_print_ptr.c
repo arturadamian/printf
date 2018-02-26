@@ -2,12 +2,13 @@
 #define BUFFERSIZE 1024
 
 /**
- * op_print_hex - prints a hex unsigned number using only _putchar, lowercase
+ * op_print_ptr - prints a hex unsigned number using only _putchar, lowercase
+ * with preceding 0x
  * @valist: va_list with the number to be printed
  *
  * Return: number of chars printed
  */
-int op_print_hex(va_list valist)
+int op_print_ptr(va_list valist)
 {
 	unsigned int n = va_arg(valist, unsigned int);
 	int temp;
@@ -16,9 +17,17 @@ int op_print_hex(va_list valist)
 
 	if (n == 0)
 	{
-		_putchar('0');
-		return (1);
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		return (5);
 	}
+
+	_putchar('0');
+	_putchar('x');
+	chars_printed = 2;
 
 	i = 0;
 	while (n != 0)
