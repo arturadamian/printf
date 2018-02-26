@@ -14,7 +14,10 @@ int op_print_binary(va_list valist)
 
 	n = va_arg(valist, unsigned int);
 	if (n == 0)
-		return (NULL);
+	{
+		_putchar('0');
+		return (1);
+	}
 	i = 0;
 	while (n > 0)
 	{
