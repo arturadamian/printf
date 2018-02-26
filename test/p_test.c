@@ -14,11 +14,12 @@ int main(void)
 
 	for (i = 0; i <= 32; i++)
 	{
+		char *p = NULL;
 		printf("--------------\n");
 
-		len = _printf("%p\n", i);
+		len = _printf("%p\n", p);
 		printf("%d\n", len);
-		len = printf("%p\n", i);
+		len = printf("%p\n", p);
 		printf("%d\n", len);
 
 	}
