@@ -9,18 +9,18 @@
  */
 int _printf(const char *format, ...)
 {
-	int chars_printed = 0, is_valid;
+	int chars_printed = 0;
 	op_func f;
 	va_list valist;
 	char *op_str;
 	char *os_no_lead_sp;
 
-	if (format == NULL)
+	if (format == NULL) 	/* error */
 		return (-1);
 
-	va_start(valist, format);
+	va_start(valist, format); /* initialize variable sized arg list */
 
-	while (*format)
+	while (*format)		/* step through format string */
 	{
 		if (*format == CONVERSION_SPECIFIER) /* hit '%' */
 		{
@@ -28,33 +28,19 @@ int _printf(const char *format, ...)
 			op_str = get_op_str(format);
 			format += _strlen(op_str);
 
-			is_valid = is_valid_os(op_str);
-
-			if (is_valid == -1)
+			if (is_err_os(op_str)) /* percentage not followed by any non-space character */
 			{
 				free(op_str);
 				return (-1);
 			}
 
-			os_no_lead_sp = skip_lead_sp(op_str);
-
-			/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0 && is_valid) */
-			/* { */
-			/* _putchar(' '); */
-			/* chars_printed++; */
-			/* } */
-
 			f = get_op_func(op_str);
 
-			if (f == NULL)
+			if (f == NULL) /* not a valid specifier */
 			{
 				_putchar('%');
 				chars_printed++;
-				/* if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0) */
-				/* { */
-				/* _putchar(' '); */
-				/* chars_printed++; */
-				/* } */
+				os_no_lead_sp = skip_lead_sp(op_str);
 				if (_strcmp(os_no_lead_sp, "%") != 0)
 					chars_printed += _putsnnl(os_no_lead_sp);
 				free(op_str);
@@ -65,14 +51,14 @@ int _printf(const char *format, ...)
 				free(op_str);
 			}
 		}
-		else
+		else		/* print the character */
 		{
 			_putchar(*format++);
 			chars_printed++;
 		}
 	}
 
-	va_end(valist);
+	va_end(valist); 	/* cleanup valist */
 
 	return (chars_printed);
 }
