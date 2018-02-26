@@ -24,6 +24,21 @@ int main(void)
 
 
 	int len;
+	len = printf("%d\n", NULL);
+	printf("%d\n", len);
+	len = _printf("%d\n", NULL);
+	printf("%d\n", len);
+
+	len = printf("%s\n", NULL);
+	printf("%d\n", len);
+	len = _printf("%s\n", NULL);
+	printf("%d\n", len);
+
+
+	len = printf(NULL);
+	printf("%d\n", len);
+	len = _printf(NULL);
+	printf("%d\n", len);
 	len = printf("%%\n");
 	printf("%d\n", len);
 	len = _printf("%%\n");
