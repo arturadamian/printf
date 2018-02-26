@@ -78,6 +78,13 @@ int main(void)
 	len = printf("%d, %d\n", 5);
 	printf("%d\n", len);
 
+	printf("--------------\n");
+
+	len = _printf("%d\n", "fuck");
+	printf("%d\n", len);
+	len = printf("%d\n", "fuck");
+	printf("%d\n", len);
+
 
 	return (0);
 }
