@@ -73,9 +73,9 @@ int main(void)
 
 	printf("--------------\n");
 
-	len = _printf("%d, %d\n", 5);
+	len = _printf("%d\n", -0);
 	printf("%d\n", len);
-	len = printf("%d, %d\n", 5);
+	len = printf("%d\n", -0);
 	printf("%d\n", len);
 
 	printf("--------------\n");
