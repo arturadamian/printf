@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int chars_printed = 0;
+	int chars_printed;
 	op_func f;
 	va_list valist;
 	char *op_str;
@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)	/* error */
 		return (-1);
+
+	chars_printed = 0;
 
 	va_start(valist, format); /* initialize variable sized arg list */
 
