@@ -1,31 +1,6 @@
 #include "holberton.h"
 
 /**
- * op_print_char - prints a character argument
- * @valist: a va_list whose next value is what we want to print
- *
- * Return: number of chars printed
- */
-int op_print_char(va_list valist)
-{
-	char c = va_arg(valist, int);
-	_putchar(c);
-	return (1);
-}
-
-/**
- * op_print_string - prints a string argument
- * @valist: a va_list whose next value is what we want to print
- *
- * Return: number of chars printed
- */
-int op_print_string(va_list valist)
-{
-	char *s = va_arg(valist, char *);
-	return (_putsnnl(s));
-}
-
-/**
  * _abs - absolute value function
  * @n: character to be abs'd
  *
@@ -60,7 +35,7 @@ int _pow(int a, int b)
 }
 /**
  * op_print_number - prints a number using only _putchar
- * @n: the number to be printed
+ * @valist: va_list with the number to be printed
  *
  * Return: number of chars printed
  */
@@ -101,32 +76,4 @@ int op_print_number(va_list valist)
 		}
 	}
 	return (chars_printed);
-}
-
-/**
- * op_print_binary - function to convert decimal to a binary
- * @valist: a valist
- *
- * Return: number of characters printed
- */
-int op_print_binary(va_list valist)
-{
-	unsigned int bNum[1000];
-	int j, i, chars_printed = 0;
-	unsigned int n;
-	n = va_arg(valist, unsigned int);
-
-	i = 0;
-	while (n > 0)
-	{
-		bNum[i] = n % 2;
-		n = n / 2;
-		i++;
-	}
-	for (j = (i - 1); j >= 0; j--)
-	{
-		_putchar('0' + bNum[j]);
-		chars_printed++;
-	}
-	return (chars_printed++);
 }

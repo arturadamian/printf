@@ -1,6 +1,12 @@
 #include "holberton.h"
 #define CONVERSION_SPECIFIER '%'
 
+/**
+ * _printf - prints stuff
+ * @format: stuff
+ *
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int chars_printed = 0, is_valid;
@@ -49,7 +55,6 @@ int _printf(const char *format, ...)
 				free(op_str);
 				continue;
 			}
-				/* return (-1); */
 			chars_printed += f(valist);
 			free(op_str);
 		}
