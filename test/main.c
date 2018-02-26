@@ -24,12 +24,18 @@ int main(void)
 
 
 	int len;
-	printf("%%\n");
-	_printf("%%\n");
-	printf("%%d\n", 5);
-	_printf("%%d\n", 5);
-	printf("%   %d\n", 5);
-	_printf("%   %d\n", 5);
+	len = printf("%%\n");
+	printf("%d\n", len);
+	len = _printf("%%\n");
+	printf("%d\n", len);
+	len = printf("%%d\n", 5);
+	printf("%d\n", len);
+	len = _printf("%%d\n", 5);
+	printf("%d\n", len);
+	len = printf("%   %d\n", 5);
+	printf("%d\n", len);
+	len = _printf("%   %d\n", 5);
+	printf("%d\n", len);
 
 	len = _printf("Length:[%b, %b]\n", 76, 333);
 	printf("%d\n", len);
