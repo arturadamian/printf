@@ -8,6 +8,7 @@ int is_op_specifier(const char c)
 	case 's':
 	case 'i':
 	case 'd':
+	case 'b':
 		return (1);
 	default:
 		return (0);
