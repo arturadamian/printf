@@ -30,12 +30,6 @@ int _printf(const char *format, ...)
 			op_str = get_op_str(format);
 			format += _strlen(op_str);
 
-			if (op_str[0] == ' ')
-			{
-				_putchar(' ');
-				chars_printed++;
-			}
-
 /* if percentage not followed by any non-space character */
 			if (is_err_os(op_str))
 			{
