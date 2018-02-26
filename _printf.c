@@ -51,7 +51,10 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				chars_printed++;
 				if (op_str[0] == ' ' && _strcmp(os_temp, "%") != 0)
+				{
 					_putchar(' ');
+					char_printed++;
+				}
 				if (_strcmp(os_temp, "%") != 0)
 					chars_printed += _putsnnl(skip_lead_sp(op_str));
 				free(op_str);
