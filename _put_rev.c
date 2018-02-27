@@ -7,7 +7,7 @@
  *
  * Return: the num of printed chars
  */
-int _put_rev(char *s)
+int _put_rev(const char *s)
 {
 	int a;
 	int chars_printed = 0;
@@ -25,8 +25,11 @@ int _put_rev(char *s)
 	for (a = 0; s[a]; a++)
 		;
 	a -= 1;
-	chars_printed += a;
 	while (a >= 0)
-		_putchar(s[a--]);
+	{
+		_putchar(s[a]);
+		chars_printed++;
+		a--;
+	}
 	return (chars_printed);
 }

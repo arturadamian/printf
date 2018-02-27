@@ -9,7 +9,7 @@ int _printf(const char *format, ...);
 int _putsnnl(const char *str);
 int _putSnnl(const char *str);
 int _putRnnl(const char *s);
-int _put_rev(char *s);
+int _put_rev(const char *s);
 int _strcmp(const char *s1, const char *s2);
 char toHEX(int n);
 char *_strncpy(char *dest, const char *src, int n);
