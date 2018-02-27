@@ -10,7 +10,7 @@
  */
 int op_print_ptr(va_list valist)
 {
-	unsigned int n = va_arg(valist, void *);
+	unsigned long int n = va_arg(valist, void *);
 	int temp;
 	int chars_printed = 0, i;
 	char hex[BUFFERSIZE];

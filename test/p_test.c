@@ -10,56 +10,50 @@
 int main(void)
 {
 
-	int len, i;
+	int len;/* , i; */
+	/* char *c = "c"; */
+	int kx = 9;
+	int *k = &kx;
+	int *j = 0;
+	char *s = "string";
 
-	for (i = 0; i <= 32; i++)
-	{
-		char *p = NULL;
-		printf("--------------\n");
+	/* for (i = 0; i <= 32; i++) */
+	/* { */
 
-		len = _printf("%p\n", p);
-		printf("%d\n", len);
-		len = printf("%p\n", p);
-		printf("%d\n", len);
+	/* 	printf("--------------\n"); */
 
-	}
+	/* 	len = _printf("%p\n", c); */
+	/* 	printf("%d\n", len); */
+	/* 	len = printf("%p\n", c); */
+	/* 	printf("%d\n", len); */
 
-	printf("--------------\n");
+	/* } */
 
-	len = _printf("%p\n", INT_MAX);
-	printf("%d\n", len);
-	len = printf("%p\n", INT_MAX);
-	printf("%d\n", len);
-
-	printf("--------------\n");
-
-	len = _printf("%p\n", UINT_MAX);
-	printf("%d\n", len);
-	len = printf("%p\n", UINT_MAX);
-	printf("%d\n", len);
 
 	printf("--------------\n");
 
-	len = _printf("%p\n", -1);
+	len = _printf("%p\n", k);
 	printf("%d\n", len);
-	len = printf("%p\n", -1);
+	len = printf("%p\n", k);
 	printf("%d\n", len);
 
 	printf("--------------\n");
 
-	len = _printf("%p\n", INT_MIN);
+	len = _printf("%p\n", j);
 	printf("%d\n", len);
-	len = printf("%p\n", INT_MIN);
+	len = printf("%p\n", j);
+	printf("%d\n", len);
+
+	printf("--------------\n");
+
+
+	len = _printf("%p\n", s);
+	printf("%d\n", len);
+	len = printf("%p\n", s);
 	printf("%d\n", len);
 
 	printf("--------------\n");
 
-	len = _printf("%p\n", 0);
-	printf("%d\n", len);
-	len = printf("%p\n", 0);
-	printf("%d\n", len);
-
-	printf("--------------\n");
 
 	return (0);
 }
