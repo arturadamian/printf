@@ -7,16 +7,31 @@
  *
  * Return: number of chars printed
  */
-int op_print_octal(va_list valist)
+int op_print_octal(va_list valist, char *flag_str)
 {
 	unsigned int n = va_arg(valist, unsigned int);
 	int chars_printed = 0, i;
 	unsigned int oct[BUFFERSIZE];
+	int has_hashtag = 0;
+
+	while (*flag_str)
+	{
+		if (*flag_str == '#')
+			has_hashtag = 1;
+                flag_str++;
+	}
+
+	if (has_hashtag)
+	{
+		_putchar('0');
+		chars_printed++;
+	}
 
 	if (n == 0)
 	{
 		_putchar('0');
-		return (1);
+		chars_printed++;
+		return (chars_printed);
 	}
 
 	i = 0;

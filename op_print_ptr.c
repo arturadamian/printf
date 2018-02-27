@@ -8,12 +8,15 @@
  *
  * Return: number of chars printed
  */
-int op_print_ptr(va_list valist)
+int op_print_ptr(va_list valist, char *flag_str)
 {
 	unsigned long int n = va_arg(valist, void *);
 	int temp;
 	int chars_printed = 0, i;
 	char hex[BUFFERSIZE];
+
+	while (*flag_str)
+		flag_str++;
 
 	if (n == 0)
 	{

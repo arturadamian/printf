@@ -26,12 +26,15 @@ int _pow_u(unsigned int a, unsigned int b)
  *
  * Return: number of chars printed
  */
-int op_print_unsigned(va_list valist)
+int op_print_unsigned(va_list valist, char *flag_str)
 {
 	int places = 1;
 	int divisor, dig;
 	unsigned int n = va_arg(valist, unsigned int);
 	int chars_printed = 0;
+
+	while (*flag_str)
+                flag_str++;
 
 	if (n < 10)
 	{

@@ -12,8 +12,10 @@ int _printf(const char *format, ...)
 	int chars_printed;
 	op_func f;
 	va_list valist;
-	char *op_str;
+	char *fullfunc_str;
 	char *os_no_lead_sp;
+	char *op_str;
+	char *flag_str;
 
 	if (format == NULL)	/* error */
 		return (-1);
@@ -27,17 +29,21 @@ int _printf(const char *format, ...)
 		if (*format == CONVERSION_SPECIFIER) /* hit '%' */
 		{
 			format++;
-			op_str = get_op_str(format);
-			if (op_str == NULL)
+			fullfunc_str = get_fullfunc_str(format);
+			if (fullfunc_str == NULL)
 				return (-1);
 
-			format += _strlen(op_str);
+			format += _strlen(fullfunc_str);
 /* if percentage not followed by any non-space character */
-			if (is_err_os(op_str))
+			if (is_err_os(fullfunc_str))
 			{
-				free(op_str);
+				free(fullfunc_str);
 				return (-1);
 			}
+
+			/* changed up to here !!!! */
+			flag_str = extract_flag_str(fullfunc_str);
+			op_str = extract_op_str(fullfunc_str);
 
 			f = get_op_func(op_str);
 
@@ -45,14 +51,14 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				chars_printed++;
-				os_no_lead_sp = skip_lead_sp(op_str);
-				if (_strcmp(os_no_lead_sp, "%") != 0)
-					chars_printed += _putsnnl(os_no_lead_sp);
+				if (_strcmp(op_str, "%") != 0)
+					chars_printed += handle_flags_invalid_specifier(flag_str);
+					chars_printed += _putsnnl(op_str);
 				free(op_str);
 			}
 			else
 			{
-				chars_printed += f(valist);
+				chars_printed += f(valist, flag_str);
 				free(op_str);
 			}
 		}

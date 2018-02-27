@@ -8,19 +8,33 @@
  *
  * Return: number of chars printed
  */
-int op_print_HEX(va_list valist)
+int op_print_HEX(va_list valist, char *flag_str)
 {
 	unsigned int n = va_arg(valist, unsigned int);
 	int temp;
 	int chars_printed = 0, i;
 	char HEX[BUFFERSIZE];
+	int has_hashtag = 0;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
+        while (*flag_str)
+        {
+                if (*flag_str == '#')
+                        has_hashtag = 1;
+                flag_str++;
+        }
 
+        if (n == 0)
+        {
+                if (has_hashtag)
+                {
+                        _putchar('0');
+			_putchar('X');
+                        chars_printed += 2;
+                }
+                _putchar('0');
+                chars_printed++;
+                return (chars_printed);
+        }
 	i = 0;
 	while (n != 0)
 	{
@@ -30,6 +44,12 @@ int op_print_HEX(va_list valist)
 		n /= 16;
 		i++;
 	}
+
+        if (has_hashtag)
+        {
+		hex[i++] = 'X';
+                hex[i++] = '0';
+        }
 
 	while (--i >= 0)
 	{

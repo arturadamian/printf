@@ -8,7 +8,7 @@
  */
 int is_err_os(char *os)
 {
-	while (*os == ' ')
+	while (isflag(*os))
 		os++;
 	switch (*os)
 	{

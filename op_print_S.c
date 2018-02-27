@@ -10,9 +10,12 @@
  *
  * Return: number of chars printed
  */
-int op_print_S(va_list valist)
+int op_print_S(va_list valist, char *flag_str)
 {
 	char *s = va_arg(valist, char *);
+
+	while (*flag_str)
+		flag_str++;
 
 	return (_putSnnl(s));
 }
