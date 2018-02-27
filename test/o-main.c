@@ -9,12 +9,12 @@
  */
 int main(void)
 {
-	printf("%R\n", " substitution ?");
-	_printf("%R\n", "! substitution ?");
+	printf("%r\n", " substitution ?");
+	_printf("%r\n", "! substitution ?");
 
 	printf("------------------------------------\n");
-	printf("%R\n", "0");
-        _printf("%R\n", "0");
+	printf("%r\n", "holberton");
+        _printf("%r\n", "holberton");
 
 	printf("------------------------------------\n");
 	printf("%R\n", "");
