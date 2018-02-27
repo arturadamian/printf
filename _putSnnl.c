@@ -1,6 +1,11 @@
 #include "holberton.h"
 #define BUFFERSIZE 1024
 
+
+/**
+ * print_2_dig_hex - prints the ascii num in Hex
+ * @n: argument
+ */
 void print_2_dig_hex(int n)
 {
 	int buf[] = {'0', '0'};
@@ -23,7 +28,7 @@ void print_2_dig_hex(int n)
 }
 
 /**
- * _putsnnl - prints a string with nnl (no new line)
+ * _putSnnl - prints a string with nnl (no new line)
  * @str: string
  *
  * Return: number of chars printed
