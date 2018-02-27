@@ -11,23 +11,21 @@
 char *get_op_str(const char *s)
 {
 	char *op_str;
-	int leading_sp = 0;
 	int i;
 
-	while (*s == ' ')
+	i = 0;
+	while (isflag(s[i]))
 	{
-		s++;
-		leading_sp++;
+		i++;
 	}
+
 	/* +1 for next character, +1 for \0 */
-	op_str = malloc(leading_sp + 1 + 1);
+	op_str = malloc(i+2);
 	if (op_str == NULL)
 		return (NULL);
 
-	for (i = 0; i < leading_sp; i++)
-		op_str[i] = ' ';
-	op_str[leading_sp + 1] = '\0';
-	_strncpy(op_str + leading_sp, s, 1);
+	_strncpy(op_str, s, i + 1); /* copy all flags and the char after */
+	op_str[i + 1] = '\0';	    /* hardcode the null terminator */
 
 	return (op_str);
 
