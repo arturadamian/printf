@@ -15,16 +15,16 @@ int _putRnnl(const char *s)
 	char y[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	if (s == NULL)
-        {
+	{
 		_putchar('(');
-                _putchar('n');
-                _putchar('u');
-                _putchar('l');
-                _putchar('l');
-                _putchar(')');
-                return (6);
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		return (6);
 	}
-	for (i = 0;s[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
 		for (z = 0; x[z]; z++)
 		{
@@ -36,8 +36,10 @@ int _putRnnl(const char *s)
 			}
 		}
 		if (s[i] != x[z])
+		{
 			_putchar(s[i]);
-		chars_printed++;
+			chars_printed++;
+		}
 	}
 	return (chars_printed);
 }

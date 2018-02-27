@@ -9,8 +9,21 @@
  */
 int main(void)
 {
-	printf("%R\n", "p");
-	printf("------------------------------------\n");
+	printf("%R\n", " substitution ?");
 	_printf("%R\n", "! substitution ?");
+
+	printf("------------------------------------\n");
+	printf("%R\n", "0");
+        _printf("%R\n", "0");
+
+	printf("------------------------------------\n");
+	printf("%R\n", "");
+        _printf("%R\n", "");
+
+	printf("------------------------------------\n");
+	printf("%R\n", "\0");
+        _printf("%R\n", "\0");
+
+
 	return (0);
 }
