@@ -21,6 +21,7 @@ op_func get_op_func(const char *s)
 		{"X", op_print_HEX},
 		{"p", op_print_ptr},
 		{"S", op_print_S},
+		{"R", op_print_rot},
 		{NULL, NULL}
 	};
 
