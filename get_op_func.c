@@ -19,6 +19,7 @@ op_func get_op_func(const char *s)
 		{"o", op_print_octal},
 		{"x", op_print_hex},
 		{"X", op_print_HEX},
+		{"S", op_print_S},
 		{NULL, NULL}
 	};
 

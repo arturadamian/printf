@@ -1,6 +1,26 @@
 #include "holberton.h"
 #define BUFFERSIZE 1024
 
+void print_2_dig_hex(int n)
+{
+	int buf[] = {'0', '0'};
+	int temp;
+	int i = 0;
+
+	while (n != 0)
+	{
+		temp = n % 16;
+		buf[i] = toHEX(temp);
+		n /= 16;
+		i++;
+	}
+	i = 1;
+	while (i >= 0)
+	{
+		_putchar(buf[i]);
+		i--;
+	}
+}
 
 /**
  * _putsnnl - prints a string with nnl (no new line)
@@ -10,12 +30,7 @@
  */
 int _putSnnl(const char *str)
 {
-	int chars_printed = 0, i;
-	unsigned int n;
-	int temp;
-	char HEX[BUFFERSIZE];
-
-
+	int chars_printed = 0;
 
 	if (str == NULL)
 	{
@@ -27,27 +42,20 @@ int _putSnnl(const char *str)
 		_putchar(')');
 		return (6);
 	}
+
 	while (*str)
 	{
-		if ((*str < 32 && *str > 0) || *str >= 127)
+		if (*str >= 32 && *str < 127)
+		{
+			_putchar(*str);
+			chars_printed++;
+		}
+		else
 		{
 			_putchar('\\');
 			_putchar('x');
-			i = 0;
-			n = *str;
-			while (n != 0)
-			{
-				temp = n % 16;
-				HEX[i] = toHEX(temp);
-				n /= 16;
-				i++;
-			}
-			while (--i >= 0)
-			{
-				_putchar(HEX[i]);
-				chars_printed++;
-			}
-			return (chars_printed);
+			print_2_dig_hex(*str);
+			chars_printed += 4;
 		}
 		str++;
 	}
