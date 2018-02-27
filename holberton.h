@@ -7,7 +7,9 @@ int _putchar(const char c);
 int _strlen(const char *s);
 int _printf(const char *format, ...);
 int _putsnnl(const char *str);
+int _putSnnl(const char *str);
 int _strcmp(const char *s1, const char *s2);
+char toHEX(int n);
 char *_strncpy(char *dest, const char *src, int n);
 char *skip_lead_sp(char *s);
 
@@ -38,6 +40,8 @@ int op_print_unsigned(va_list valist);
 int op_print_octal(va_list valist);
 int op_print_hex(va_list valist);
 int op_print_HEX(va_list valist);
+int op_print_s(va_list valist);
+
 op_func get_op_func(const char *s);
 char *get_op_str(const char *s);
 int is_err_os(char *os);

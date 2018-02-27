@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define BUFFERSIZE 1024
 
 
 /**
@@ -8,12 +7,11 @@
  *
  * Return: number of chars printed
  */
-int op_print_HEX(va_list valist)
+int op_print_S(va_list valist)
 {
 	unsigned int n = va_arg(valist, unsigned int);
 	int temp;
 	int chars_printed = 0, i;
-	char HEX[BUFFERSIZE];
 
 	if (n == 0)
 	{
