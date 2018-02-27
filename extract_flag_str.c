@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * extract_flag_str - extracts the flag_str from the fullfunc_str
  * @fullfunc_str: the string with both flags and op
@@ -6,8 +8,16 @@
  */
 char *extract_flag_str(char *fullfunc_str)
 {
-	char flag_str[] = {'f', 'f', 'f', '\0'};
 	int contains_plus = 0;
+	int i;
+
+	char *flag_str = malloc(NUM_FLAGS + 1);
+	if (flag_str == NULL)
+		return NULL;
+
+	for (i = 0; i < NUM_FLAGS; i++)
+		flag_str[i] = 'f'; /* placeholder */
+	flag_str[i] = '\0';	   /* hardcode null terminator */
 
 	while (isflag(*fullfunc_str))
 	{
@@ -30,7 +40,7 @@ char *extract_flag_str(char *fullfunc_str)
 	}
 
 	/* + always overrides sp according to man 3 printf */
-	if (contains_plus):
+	if (contains_plus)
 		flag_str[0] = 'f';
 
 	return (flag_str);

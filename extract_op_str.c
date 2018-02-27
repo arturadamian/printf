@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * extract_op_str - extracts the op_str from the fullfunc_str
  * @fullfunc_str: the string with both flags and op
@@ -6,7 +8,12 @@
  */
 char *extract_op_str(char *fullfunc_str)
 {
-	char op_str[] = {' ', '\0'};
+	char *op_str = malloc(2);
+	if (op_str == NULL)
+		return (NULL);
+
+	op_str[0] = ' ';
+	op_str[1] = '\0';
 
 	while (isflag(*fullfunc_str))
 		fullfunc_str++;

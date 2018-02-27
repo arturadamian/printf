@@ -47,8 +47,8 @@ int op_print_HEX(va_list valist, char *flag_str)
 
         if (has_hashtag)
         {
-		hex[i++] = 'X';
-                hex[i++] = '0';
+		HEX[i++] = 'X';
+                HEX[i++] = '0';
         }
 
 	while (--i >= 0)

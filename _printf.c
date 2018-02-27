@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 	op_func f;
 	va_list valist;
 	char *fullfunc_str;
-	char *os_no_lead_sp;
 	char *op_str;
 	char *flag_str;
 
@@ -41,9 +40,22 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 
-			/* changed up to here !!!! */
 			flag_str = extract_flag_str(fullfunc_str);
+			/* handle malloc error */
+			if (flag_str == NULL)
+			{
+                                free(fullfunc_str);
+                                return (-1);
+			}
+
 			op_str = extract_op_str(fullfunc_str);
+			/* handle malloc error */
+			if (flag_str == NULL)
+			{
+                                free(fullfunc_str);
+				free(flag_str);
+                                return (-1);
+			}
 
 			f = get_op_func(op_str);
 
@@ -52,14 +64,20 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				chars_printed++;
 				if (_strcmp(op_str, "%") != 0)
+				{
 					chars_printed += handle_flags_invalid_specifier(flag_str);
 					chars_printed += _putsnnl(op_str);
+				}
 				free(op_str);
+				free(flag_str);
+				free(fullfunc_str);
 			}
 			else
 			{
 				chars_printed += f(valist, flag_str);
 				free(op_str);
+				free(flag_str);
+				free(fullfunc_str);
 			}
 		}
 		else /* print the character */

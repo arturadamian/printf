@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#define NUM_FLAGS 3
 int _putchar(const char c);
 int _strlen(const char *s);
 int _printf(const char *format, ...);
