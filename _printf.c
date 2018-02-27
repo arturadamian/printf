@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			op_str = get_op_str(format);
+			if (op_str == NULL)
+				return (-1);
 			format += _strlen(op_str);
 
 /* if percentage not followed by any non-space character */
