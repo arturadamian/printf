@@ -10,10 +10,10 @@ char *extract_flag_str(char *fullfunc_str)
 {
 	int contains_plus = 0;
 	int i;
-
 	char *flag_str = malloc(NUM_FLAGS + 1);
+
 	if (flag_str == NULL)
-		return NULL;
+		return (NULL);
 
 	for (i = 0; i < NUM_FLAGS; i++)
 		flag_str[i] = 'f'; /* placeholder */

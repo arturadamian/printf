@@ -22,7 +22,7 @@ char *get_fullfunc_str(const char *s)
 		i++;
 
 	/* +1 for next character, +1 for \0 */
-	fullfunc_str = malloc(i+2);
+	fullfunc_str = malloc(i + 2);
 	if (fullfunc_str == NULL)
 		return (NULL);
 
