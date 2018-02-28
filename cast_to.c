@@ -9,7 +9,7 @@ long unsigned int cast_to_sui(long unsigned int n)
 	short unsigned int t;
 
 	t = (short unsigned int)n;
-	return t;
+	return (t);
 }
 
 /**
@@ -23,7 +23,7 @@ long unsigned int cast_to_ui(long unsigned int n)
 	unsigned int t;
 
 	t = (unsigned int)n;
-	return t;
+	return (t);
 }
 
 /**
@@ -37,7 +37,7 @@ long int cast_to_si(long int n)
 	short int t;
 
 	t = (short int)n;
-	return t;
+	return (t);
 }
 
 /**
@@ -51,5 +51,5 @@ long int cast_to_i(long int n)
 	int t;
 
 	t = (int)n;
-	return t;
+	return (t);
 }
