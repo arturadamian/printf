@@ -36,15 +36,14 @@ int op_print_unsigned(va_list valist, char *flag_str, char *len_mods)
 	int mod_h = 0;
 
 	while (*flag_str)
-                flag_str++;
-
+		flag_str++;
 	while (*len_mods)
-        {
-                if (*len_mods == 'l')
-                        mod_l = 1;
+	{
+		if (*len_mods == 'l')
+			mod_l = 1;
 		if (*len_mods == 'h')
 			mod_h = 1;
-                len_mods++;
+		len_mods++;
 	}
 
 	if (mod_l)
