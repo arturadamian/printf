@@ -18,6 +18,9 @@ char *extract_op_str(char *fullfunc_str)
 	while (isflag(*fullfunc_str))
 		fullfunc_str++;
 
+	if (islen_mod(*fullfunc_str))
+		fullfunc_str++;
+
 	op_str[0] = *fullfunc_str;
 
 	return (op_str);

@@ -7,13 +7,16 @@
  *
  * Return: number of chars printed
  */
-int op_print_hex(va_list valist, char *flag_str)
+int op_print_hex(va_list valist, char *flag_str, char *len_mods)
 {
-	unsigned int n = va_arg(valist, unsigned int);
+	long unsigned int n = va_arg(valist, long unsigned int);
 	int temp;
 	int chars_printed = 0, i;
 	char hex[BUFFERSIZE];
 	int has_hashtag = 0;
+	int mod_l = 0;
+	int mod_h = 0;
+
 
         while (*flag_str)
         {
@@ -22,14 +25,24 @@ int op_print_hex(va_list valist, char *flag_str)
                 flag_str++;
         }
 
+        while (*len_mods)
+        {
+                if (*len_mods == 'l')
+                        mod_l = 1;
+                if (*len_mods == 'h')
+                        mod_h = 1;
+                len_mods++;
+        }
+
+	if (mod_l)
+		;
+	else if (mod_h)
+		n = cast_to_sui(n);
+	else
+		n = cast_to_ui(n);
+
 	if (n == 0)
 	{
-		/* if (has_hashtag) */
-		/* { */
-		/* 	_putchar('0'); */
-		/* 	_putchar('x'); */
-		/* 	chars_printed += 2; */
-		/* } */
 		_putchar('0');
 		chars_printed++;
 		return (chars_printed);
@@ -38,7 +51,6 @@ int op_print_hex(va_list valist, char *flag_str)
 	i = 0;
 	while (n != 0)
 	{
-
 		temp = n % 16;
 		hex[i] = tohex(temp);
 		n /= 16;

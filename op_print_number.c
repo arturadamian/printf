@@ -39,14 +39,16 @@ int _pow(int a, int b)
  *
  * Return: number of chars printed
  */
-int op_print_number(va_list valist, char *flag_str)
+int op_print_number(va_list valist, char *flag_str, char *len_mods)
 {
 	int places = 1;
 	int divisor, dig;
-	int n = va_arg(valist, int);
+	long int n = va_arg(valist, long int);
 	int chars_printed = 0;
 	int has_plus = 0;
 	int has_sp = 0;
+	int mod_l = 0;
+	int mod_h = 0;
 
 	while (*flag_str)
 	{
@@ -56,6 +58,22 @@ int op_print_number(va_list valist, char *flag_str)
 			has_plus = 1;
 		flag_str++;
 	}
+
+	while (*len_mods)
+	{
+                if (*len_mods == 'l')
+			mod_l = 1;
+		if (*len_mods == 'h')
+			mod_h = 1;
+		len_mods++;
+	}
+
+	if (mod_l)
+		;
+	else if (mod_h)
+		n = cast_to_si(n);
+	else
+		n = cast_to_i(n);
 
 	if (n < 0)
 	{

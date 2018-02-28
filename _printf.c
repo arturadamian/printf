@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	char *fullfunc_str;
 	char *op_str;
 	char *flag_str;
+	char *len_mods_str;
 
 	if (format == NULL)	/* error */
 		return (-1);
@@ -48,12 +49,21 @@ int _printf(const char *format, ...)
                                 return (-1);
 			}
 
+			len_mods_str = extract_len_mods_str(fullfunc_str);
+			if (len_mods_str == NULL)
+			{
+				free(flag_str);
+				free(fullfunc_str);
+				return (-1);
+			}
+
 			op_str = extract_op_str(fullfunc_str);
 			/* handle malloc error */
 			if (flag_str == NULL)
 			{
                                 free(fullfunc_str);
 				free(flag_str);
+				free(len_mods_str);
                                 return (-1);
 			}
 
@@ -70,13 +80,15 @@ int _printf(const char *format, ...)
 				}
 				free(op_str);
 				free(flag_str);
+				free(len_mods_str);
 				free(fullfunc_str);
 			}
 			else
 			{
-				chars_printed += f(valist, flag_str);
+				chars_printed += f(valist, flag_str, len_mods_str);
 				free(op_str);
 				free(flag_str);
+				free(len_mods_str);
 				free(fullfunc_str);
 			}
 		}

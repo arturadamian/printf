@@ -16,9 +16,10 @@ char *get_fullfunc_str(const char *s)
 
 	i = 0;
 	while (isflag(s[i]))
-	{
 		i++;
-	}
+
+	if (islen_mod(s[i]))
+		i++;
 
 	/* +1 for next character, +1 for \0 */
 	fullfunc_str = malloc(i+2);

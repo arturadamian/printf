@@ -7,12 +7,14 @@
  *
  * Return: number of chars printed
  */
-int op_print_char(va_list valist, char *flag_str)
+int op_print_char(va_list valist, char *flag_str, char *len_mods_str)
 {
 	char c = va_arg(valist, int);
 
 	while (*flag_str)
 		flag_str++;
+	while (*len_mods_str)
+                len_mods_str++;
 
 	_putchar(c);
 	return (1);

@@ -6,7 +6,7 @@
  *
  * Return: number of characters printed
  */
-int op_print_binary(va_list valist, char *flag_str)
+int op_print_binary(va_list valist, char *flag_str, char *len_mods_str)
 {
 	unsigned int bNum[1000];
 	int j, i, chars_printed = 0;
@@ -14,6 +14,8 @@ int op_print_binary(va_list valist, char *flag_str)
 
         while (*flag_str)
 		flag_str++;
+        while (*len_mods_str)
+		len_mods_str++;
 
 	n = va_arg(valist, unsigned int);
 	if (n == 0)

@@ -8,7 +8,7 @@
  *
  * Return: number of chars printed
  */
-int op_print_ptr(va_list valist, char *flag_str)
+int op_print_ptr(va_list valist, char *flag_str, char *len_mods_str)
 {
 	unsigned long int n = va_arg(valist, void *);
 	int temp;
@@ -17,6 +17,8 @@ int op_print_ptr(va_list valist, char *flag_str)
 
 	while (*flag_str)
 		flag_str++;
+	while (*len_mods_str)
+                len_mods_str++;
 
 	if (n == 0)
 	{

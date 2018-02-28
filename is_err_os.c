@@ -10,6 +10,8 @@ int is_err_os(char *os)
 {
 	while (isflag(*os))
 		os++;
+	if (islen_mod(*os))
+		os++;
 	switch (*os)
 	{
 	case '\0':
