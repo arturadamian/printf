@@ -21,11 +21,6 @@ int op_print_octal(va_list valist, char *flag_str)
                 flag_str++;
 	}
 
-	if (has_hashtag)
-	{
-		_putchar('0');
-		chars_printed++;
-	}
 
 	if (n == 0)
 	{
@@ -33,6 +28,13 @@ int op_print_octal(va_list valist, char *flag_str)
 		chars_printed++;
 		return (chars_printed);
 	}
+
+	if (has_hashtag)
+	{
+		_putchar('0');
+		chars_printed++;
+	}
+
 
 	i = 0;
 	while (n != 0)

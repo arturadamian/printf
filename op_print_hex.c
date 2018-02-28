@@ -24,12 +24,12 @@ int op_print_hex(va_list valist, char *flag_str)
 
 	if (n == 0)
 	{
-		if (has_hashtag)
-		{
-			_putchar('0');
-			_putchar('x');
-			chars_printed += 2;
-		}
+		/* if (has_hashtag) */
+		/* { */
+		/* 	_putchar('0'); */
+		/* 	_putchar('x'); */
+		/* 	chars_printed += 2; */
+		/* } */
 		_putchar('0');
 		chars_printed++;
 		return (chars_printed);
