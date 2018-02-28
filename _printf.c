@@ -45,8 +45,8 @@ int _printf(const char *format, ...)
 			/* handle malloc error */
 			if (flag_str == NULL)
 			{
-                                free(fullfunc_str);
-                                return (-1);
+				free(fullfunc_str);
+				return (-1);
 			}
 
 			len_mods_str = extract_len_mods_str(fullfunc_str);
@@ -61,10 +61,10 @@ int _printf(const char *format, ...)
 			/* handle malloc error */
 			if (op_str == NULL)
 			{
-                                free(fullfunc_str);
+				free(fullfunc_str);
 				free(flag_str);
 				free(len_mods_str);
-                                return (-1);
+				return (-1);
 			}
 
 			f = get_op_func(op_str);
