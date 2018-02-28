@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 
 			op_str = extract_op_str(fullfunc_str);
 			/* handle malloc error */
-			if (flag_str == NULL)
+			if (op_str == NULL)
 			{
                                 free(fullfunc_str);
 				free(flag_str);
